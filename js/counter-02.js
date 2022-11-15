@@ -6,12 +6,12 @@ window.addEventListener("click", function (event) {
     event.target.dataset.action === "plus" ||
     event.target.dataset.action === "minus"
   ) {
-    console.log("true");
+    // нашли родителя
+    const counterWrapper = event.target.closest(".counter-wrapper");
+    // нашли counter всередині родителя
+    counter = counterWrapper.querySelector("[data-counter]");
   }
-  // нашли родителя
-  const counterWrapper = event.target.closest(".counter-wrapper");
-  // нашли counter всередині родителя
-  counter = counterWrapper.querySelector("[data-counter]");
+
   if (event.target.dataset.action === "plus") {
     counter.innerText = ++counter.innerText;
   }
